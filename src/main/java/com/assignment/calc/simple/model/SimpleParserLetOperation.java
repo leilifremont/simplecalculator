@@ -10,6 +10,7 @@ public class SimpleParserLetOperation extends SimpleParserOperation {
         super(SimpleParserConstants.LET, 3);
     }
 
+    @Override
     public void calculateResult() {
         if (this.operandsList.size() != this.requiredOperands) {
             throw new RuntimeException("invalid operands size " + this.operandsList.size());

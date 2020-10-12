@@ -10,6 +10,7 @@ public class SimpleParserAddOperation extends SimpleParserOperation {
         super(SimpleParserConstants.ADD, 2);
     }
 
+    @Override
     public void calculateResult() {
         if (this.operandsList.size() != this.requiredOperands) {
             throw new RuntimeException("invalid operands size " + this.operandsList.size());

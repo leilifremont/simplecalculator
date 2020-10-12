@@ -32,8 +32,8 @@ public class SimpleParserException extends RuntimeException {
 
     @Override
     public String toString() {
-        return "ParserException{" +
-                "errorCode=" + simpleParserErrorCode +
+        return "SimpleParserException{" +
+                "simpleParserErrorCode=" + simpleParserErrorCode +
                 ", index=" + index +
                 '}';
     }

@@ -14,6 +14,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
+
+    private final static List<String> USAGE_LIST = new ArrayList<>();
+    static {
+        USAGE_LIST.add("Simple command line calculator");
+        USAGE_LIST.add("Usage: java Calculator [-H] [-L <logLevel>] expression");
+        USAGE_LIST.add("The following options are available:");
+        USAGE_LIST.add("-L      to specify log level, support ERROR INFO DEBUG");
+        USAGE_LIST.add("-H      to print this usage");
+    }
+
     public static void main(String[] args) {
         Logger logger=new SimpleLoggingFactory().getLogger();
         logger.setLevel(SimpleLoggingConstants.LOG_LEVEL_OFF);
@@ -48,13 +58,7 @@ public class Calculator {
     }
 
     private static void printHelp() {
-        List<String> list=new ArrayList<>();
-        list.add("Simple command line calculator");
-        list.add("Usage: java Calculator [-H] [-L <logLevel>] expression");
-        list.add("The following options are available:");
-        list.add("-L      to specify log level, support ERROR INFO DEBUG");
-        list.add("-H      to print this usage");
-        for (String line:list) {
+        for (String line: USAGE_LIST) {
             System.out.println(line);
         }
     }

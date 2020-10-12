@@ -15,7 +15,7 @@ public class SimpleParserVariable extends SimpleParserExpression {
     protected void calculateResult() {
         String variableName = this.expressionBuilder.toString();
         if (!variables.containsKey(variableName)) {
-            throw new RuntimeException("Not defined variable " + variableName);
+            throw new RuntimeException("Undefined variable : " + variableName);
         }
         this.result = variables.get(variableName).getResult();
     }

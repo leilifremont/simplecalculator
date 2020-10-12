@@ -40,7 +40,7 @@ public class SimpleLoggingLogger implements Logger {
         } else if (SimpleLoggingConstants.LOG_LEVEL_ERROR.equalsIgnoreCase(newLevel)) {
             logger.setLevel(Level.ERROR);
         } else {
-            throw new RuntimeException("Not supported log level " + newLevel);
+            throw new UnsupportedOperationException("Unsupported log level " + newLevel);
         }
     }
 }

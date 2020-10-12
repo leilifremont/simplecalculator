@@ -27,7 +27,7 @@ public enum SimpleParserErrorCode {
 
     @Override
     public String toString() {
-        return "ErrorCode{" +
+        return "SimpleParserErrorCode{" +
                 "id=" + id +
                 ", message='" + message + '\'' +
                 '}';

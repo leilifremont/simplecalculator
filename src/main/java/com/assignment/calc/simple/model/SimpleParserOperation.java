@@ -26,7 +26,7 @@ public abstract class SimpleParserOperation extends SimpleParserExpression {
 
     public void addOperand(SimpleParserExpression simpleParserExpression) {
         if (operandsList.size() == this.requiredOperands) {
-            throw new RuntimeException("Exceed required operations");
+            throw new RuntimeException("Exceed required operands");
         }
         operandsList.add(simpleParserExpression);
     }

@@ -1,8 +1,10 @@
 language: java
 
 jdk:
-  - oraclejdk9
+ - openjdk11
 
-install: true
 script:
 - mvn install
+after_success:
+after_failure:
+

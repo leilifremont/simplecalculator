@@ -33,15 +33,20 @@ public class SimpleParserImpl implements Parser {
             return 0;
         }
 
-        logger.info("Is working on " + expression);
+        logger.info("Start parsing for " + expression);
         Deque<SimpleParserExpression> stack = new ArrayDeque<>();
         SimpleParserExpression currentParserExpression = null;
         StringBuilder expressionBuilder = new StringBuilder();
         SimpleParserState currentParserState = SimpleParserState.START;
 
         for (int i=0; i<=expression.length(); i++) {
+            logger.debug("At position " + i + ", currentParserState is " + currentParserState);
+            logger.debug("At position " + i + ", stack is " + stack);
+            logger.debug("At position " + i + ", expressionBuilder is " + expressionBuilder);
+            logger.debug("At position " + i + ", currentParserExpression is " + currentParserExpression);
             SimpleParserState nextParserState = i == expression.length() ? SimpleParserState.END :
                     simpleParserStateCalculator.nextState(currentParserState, expression.charAt(i));
+            logger.debug("At position " + i + ", nextParserState is " + nextParserState);
             switch (currentParserState) {
                 case START:
                     switch (nextParserState) {
@@ -150,6 +155,7 @@ public class SimpleParserImpl implements Parser {
                     // Do nothing by default
             }
 
+            logger.debug("At position " + i + ", after processing, nextParserState is " + nextParserState);
             currentParserState = nextParserState;
             if (currentParserState == SimpleParserState.ERROR) {
                 logger.error("Error found at position [" + i + "] of " + expression);

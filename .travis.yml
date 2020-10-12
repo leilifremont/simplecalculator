@@ -3,8 +3,15 @@ language: java
 jdk:
  - openjdk11
 
+addons:
+  apt:
+    packages:
+      - oracle-java8-installer
+
 script:
-- mvn install
+ - mvn install
+ - mvn test
+
 after_success:
 after_failure:
 

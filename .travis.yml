@@ -1,12 +1,12 @@
 language: java
 
 jdk:
- - openjdk11
+ - oraclejdk11
 
 addons:
   apt:
     packages:
-      - oracle-java8-installer
+      - oracle-java11-installer
 
 script:
  - mvn install

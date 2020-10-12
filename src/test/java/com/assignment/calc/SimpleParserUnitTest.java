@@ -8,6 +8,8 @@ package com.assignment.calc;
 import com.assignment.calc.simple.error.SimpleParserErrorCode;
 import com.assignment.calc.simple.error.SimpleParserException;
 import com.assignment.calc.simple.impl.SimpleParserFactory;
+import com.assignment.logging.Logger;
+import com.assignment.logging.model.SimpleLoggingConstants;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -22,7 +24,9 @@ public class SimpleParserUnitTest {
 
     @Before
     public void setup() {
-        this.parser = new SimpleParserFactory().makeNewInstance(new SimpleLoggingFactory().getLogger());
+        Logger logger = new SimpleLoggingFactory().getLogger();
+        logger.setLevel(SimpleLoggingConstants.LOG_LEVEL_INFO);
+        this.parser = new SimpleParserFactory().makeNewInstance(logger);
     }
 
     @Test

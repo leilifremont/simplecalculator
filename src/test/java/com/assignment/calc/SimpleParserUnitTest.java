@@ -339,6 +339,19 @@ public class SimpleParserUnitTest {
     }
 
     @Test
+    public void testLetAddLetMult() {
+        Random random = new Random();
+        for (int i = 0; i< RANDOM_TEST_ROUNDS; i++) {
+            int a = random.nextInt();
+            int b = random.nextInt();
+            int c = random.nextInt();
+            String input = "div(" + a + ",let(a," + b + ",add(let(a," + c + ",mult(a,30)),a)))";
+            int result = this.parser.parse(input);
+            Assert.assertTrue(result == (a / (c * 30 + b)));
+        }
+    }
+
+    @Test
     public void testDivLetAddLet() {
         int a=3000;
         int b=100;

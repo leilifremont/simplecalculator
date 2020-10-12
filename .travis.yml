@@ -4,9 +4,7 @@ jdk:
  - oraclejdk11
 
 script:
- - mvn install
+ - mvn install -D skipTests
  - mvn test
 
-after_success:
-after_failure:
 

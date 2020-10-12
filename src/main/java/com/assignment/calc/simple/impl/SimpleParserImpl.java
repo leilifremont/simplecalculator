@@ -60,6 +60,8 @@ public class SimpleParserImpl implements Parser {
                             }
                             expressionBuilder.append(expression.charAt(i));
                             break;
+                        default:
+                            // do nothing
                     }
                     break;
                 case NEGATIVE_SIGN:
@@ -67,6 +69,8 @@ public class SimpleParserImpl implements Parser {
                         case NUMBER:
                             expressionBuilder.append(expression.charAt(i));
                             break;
+                        default:
+                            // do nothing
                     }
                     break;
                 case NUMBER:
@@ -89,6 +93,8 @@ public class SimpleParserImpl implements Parser {
                                 expressionBuilder = new StringBuilder();
                             }
                             break;
+                        default:
+                            // do nothing
                     }
                     break;
                 case OPERATOR:
@@ -130,6 +136,8 @@ public class SimpleParserImpl implements Parser {
                                 nextParserState = SimpleParserState.ERROR;
                             }
                             break;
+                        default:
+                            // do nothing
                     }
                     break;
                 case END:
@@ -149,10 +157,12 @@ public class SimpleParserImpl implements Parser {
                                 expressionBuilder = new StringBuilder();
                             }
                             break;
+                        default:
+                            // do nothing
                     }
                     break;
                 default:
-                    // Do nothing by default
+                    // do nothing by default
             }
 
             logger.debug("At position " + i + ", after processing, nextParserState is " + nextParserState);

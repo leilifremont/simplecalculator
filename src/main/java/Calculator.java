@@ -17,11 +17,13 @@ public class Calculator {
 
     private final static List<String> USAGE_LIST = new ArrayList<>();
     static {
-        USAGE_LIST.add("Simple command line calculator");
+        USAGE_LIST.add("A simple command line calculator");
         USAGE_LIST.add("Usage: java Calculator [-H] [-L <logLevel>] expression");
         USAGE_LIST.add("The following options are available:");
-        USAGE_LIST.add("-L      to specify log level, support ERROR INFO DEBUG");
-        USAGE_LIST.add("-H      to print this usage");
+        USAGE_LIST.add("-L          to specify log level, support ERROR INFO DEBUG");
+        USAGE_LIST.add("-H          to print this usage");
+        USAGE_LIST.add("expression  support let/add/mult/div");
+        USAGE_LIST.add("example     let(a, 5, add(a, a)) = 10");
     }
 
     public static void main(String[] args) {

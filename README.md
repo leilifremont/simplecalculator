@@ -1,2 +1,2 @@
 # simplecalculator
-Asimple command-line calculator
+A simple command-line calculator

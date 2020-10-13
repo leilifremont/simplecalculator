@@ -20,7 +20,7 @@ public class SimpleParserOperationFactory {
             case SimpleParserConstants.LET:
                 return new SimpleParserLetOperation();
             default:
-                throw new UnsupportedOperationException("Not supported operation " + operation);
+                throw new UnsupportedOperationException("Unsupported operation " + operation);
         }
     }
 }
